@@ -1,0 +1,432 @@
+	@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+	* { box-sizing : border-box;
+		font-family: 'Inter', 'Noto Sans KR', Arial, Helvetica, sans-serif;
+	}
+	* {box-sizing : border-box;}
+	.border { border  : 1px solid red;}
+	.fl{float:left;}
+	.fr{float:right;}
+	.scrollbar{
+		width:250px;
+		height:250px;
+		overflow-y:scroll;
+	}
+	
+	.scrollbar::-webkit-scrollbar {
+		width: 7px;  
+		height: 7px;
+		padding-right: 7px;
+		
+	}	
+	.scrollbar::-webkit-scrollbar-thumb {
+		background: #666; /* 스크롤바 색상 */
+		border-radius: 10px; /* 스크롤바 둥근 테두리 */
+	}
+	.scrollbar::-webkit-scrollbar-track {
+		background: #999;  /*스크롤바 뒷 배경 색상*/
+	}
+	
+	body{
+		margin : 0; padding : 0;
+		font-family : 'Roboto', 'Noto Sans KR';
+		color : #4f545d;
+		font-size : 14px;
+	}
+	
+	
+	#div_sidebar{
+		width : 260px;
+		height: 100vh;
+		background-color : #4f545d;
+	}
+	#div_header{
+		width : 260px;
+		height : 60px;
+		padding : 18px 0px;
+		background-color : #3D4044;
+	}
+	#div_side{
+		margin:0px;
+		width:260px;
+		height: calc(100vh - 135px);
+		padding : 25px 10px 25px 30px;
+		background-color : #4f545d;
+		overflow-y : scrollbar;
+		overflow-x : hidden;
+	}
+	#div_content{
+		width: calc(100vw - 260px);
+		min-height : 450px;
+		padding : 21px 30px 25px;
+	}
+	#div_imagelogo{
+		width : 260px;
+		height : 28.86px;
+	}
+	#div_sidecontents > h2{
+		margin-top: 0px;
+		margin-bottom: 7px;
+	    line-height: 24px;
+	    font-size: 15px;
+	    color: #fff;
+	    font-weight: 800;
+	}
+	#div_sidecontents{
+		width : 220px;
+		height :914.6px;
+		overflow:hidden;
+	}
+	
+	#div_imagelogo > img{
+		margin-left:30px;
+		width : 128px;
+	}
+	
+	#div_h3box{
+		padding-left:6px;
+		margin-bottom:18px;
+		width:220px;
+		height:134px;
+	}
+	#div_h3box2{
+		padding-left:6px;
+		margin-bottom:18px;
+		width:220px;
+		height:160.8px;
+	}
+	#div_h3box3{
+		padding-left:6px;
+		margin-bottom:18px;
+		width:220px;
+		height:53.6px;
+	}
+	#div_h3box4{
+		padding-left:6px;
+		margin-bottom:18px;
+		width:220px;
+		height:26.8px;
+	}
+	#div_h3box > h3{
+		margin : 0px 0px 0px 0px;
+		position: relative;
+	    padding: 5px 20px 5px 0px;
+	    line-height: 1.2;
+	    text-wrap: balance;
+	    font-size: 14px;
+	    color: #bebec3;
+	    font-weight: 300;
+	}
+	#div_h3box2 > h3{
+		margin : 0px 0px 0px 0px;
+		position: relative;
+	    padding: 5px 20px 5px 0px;
+	    line-height: 1.2;
+	    text-wrap: balance;
+	    font-size: 14px;
+	    color: #bebec3;
+	    font-weight: 300;
+	}
+	#div_h3box3 > h3{
+		margin : 0px 0px 0px 0px;
+		position: relative;
+	    padding: 5px 20px 5px 0px;
+	    line-height: 1.2;
+	    text-wrap: balance;
+	    font-size: 14px;
+	    color: #bebec3;
+	    font-weight: 300;
+	}
+	#div_h3box4 > h3{
+		margin : 0px 0px 0px 0px;
+		position: relative;
+	    padding: 5px 20px 5px 0px;
+	    line-height: 1.2;
+	    text-wrap: balance;
+	    font-size: 14px;
+	    color: #bebec3;
+	    font-weight: 300;
+	}
+	#div_helpbutton{
+		width : 210px;
+		height : 32.8px;
+		margin-left:30px;
+		margin-right:20px;
+		bargin-bottom:30px;
+		margin-top:10px;
+	}
+	#div_helpbutton > img{
+		width : 210px;
+		height : 32.8px;
+	}
+	#div_titleh1{
+		width:1600px;
+		height:59px;
+		padding : 0 0 14px;
+		display:flex;
+		align-items:center;
+		border-bottom : 1px solid #e6e6e6;
+	}
+	#div_titleh1 > h1{
+		flex-shrink: 0;
+	    line-height: 24px;
+	    font-size: 19px;
+	    color: #111111;
+	    font-weight: 700;
+	    margin : 10px;
+	    display: block;
+	}
+	#div_guide{
+		width:1600px;
+		height:126px;
+		margin : 20px 0px 0px;
+		padding : 15px 130px 15px 20px;
+		position: relative;
+	    padding: 15px 20px;
+	    background-color: #f9f9fb;
+	}
+	#div_insertFile{
+		width : 1600px;
+		height:96px;
+		padding:25px 0px 0px;
+	}
+	
+	#div_backsign{
+		margin-right : 10px;
+		width : 20px;
+		height : 20px;
+		background:url(https://flow.team/design2/flow_admin_2019/img/ico_popup_back.svg) no-repeat center;
+		border : none;
+		cursor : pointer;
+		vertical-align: center;
+	}
+	#div_guide > ul{
+		margin : 0px;
+		padding : 0px;
+	}
+	#div_guide > ul > li{
+		line-height: 24px;
+	    font-size: 12px;
+	    color: #4c4d4e;
+	}
+	#div_guide > a{
+	    position: absolute;
+	    bottom: 15px;
+	    right: 0;
+	    width: 120px;
+	    padding: 7px 0;
+	    border-radius: 2px;
+	    background: #777;
+	    font-size: 14px;
+	    font-weight: 700;
+	    color: #fff;
+	    text-align: center;
+	}
+	
+	#div_excelupload{
+		width:1600px;
+		height:32px;
+	}
+	#div_excelupload > input{
+		cursor : pointer;
+		border : 1px solid #e6e6e6;
+		min-width: 300px;
+	    height: 32px;
+	    font-size: 13px;
+	    color: #4f545d;
+	    border: 1px solid #e6e6e6;
+	    border-radius: 1px;
+	    box-sizing: border-box;
+	    padding : 0 0 0 10px;
+	}
+	.button1{
+		color: #fff;
+	    border-color: #307cff;
+	    background-color: #307cff;
+		padding: 0 10px;
+	    height: 30px;
+	    line-height: 28px;
+	    font-size: 14px;
+	    font-weight: bold;
+	    border: 1px solid #c9c9c9;
+	    border-radius: 2px;
+	    cursor: pointer;
+	}
+	.button2{
+		padding: 0 10px;
+	    height: 30px;
+	    line-height: 28px;
+	    font-size: 14px;
+	    color: #4c4c4c;
+	    font-weight: bold;
+	    border: 1px solid #c9c9c9;
+	    border-radius: 2px;
+	    background-color: #fff;
+	    display: inline-block;
+	    vertical-align: middle;
+	    text-align: center;
+	    cursor: pointer;
+	}
+	.button2 > span{
+		display: inline-block;
+	    content: "";
+	    width: 16px;
+	    height: 16px;
+	    margin: 7px 5px 0 0;
+	    background: url(https://flow.team/img/ico/ico_download_admin.png) no-repeat;
+	    vertical-align: top;
+	}
+	#div_insertFile > p{
+		margin-top : 5px;
+		font-size : 13px;
+		color : #a2a2a2;
+	}
+	#div_additional_person{
+		width:1600px;
+		height:76px;
+		margin-top : 10px;
+		margin-bottom:15px;
+	}
+	#div_totalamount{
+		width:1600px;
+		height:38px;
+	}
+	#div_totalleft{
+		width:463.23px;
+		height:20px;
+		margin-top:4px;
+	}
+	#div_totalright{
+		width:168.64px;
+		height:30px;
+		margin-bottom:8px;
+	}
+	#div_totalleft > label > input{
+		margin: -6px 0 0 12px;
+	}
+	table{
+		table-layout : fixed;
+		width : 100%;
+		border-collapse:collapse;
+	}
+	
+	th{
+		    vertical-align: middle;
+		    font-size: 13px;
+		    color: #111;
+		    text-align: center;
+		    font-weight: normal;
+		    border: 1px solid #e1e1e2;
+		    background-color : #f0f0fb;
+		    height : 37px;
+	}
+	tbody{
+		    display: table-row-group;
+		    vertical-align: middle;
+		    unicode-bidi: isolate;
+		    border-color: inherit;
+	}
+	tr{
+		display: table-row;
+	    vertical-align: inherit;
+	    unicode-bidi: isolate;
+	    border-color: inherit;
+	    cursor:pointer;
+	    background-color : white;
+	    
+	}
+	td{
+		position: relative;
+	    padding: 8px;
+	    line-height: 16px;
+	    word-break: break-word;
+	    vertical-align: middle;
+	    font-size: 13px;
+	    color: #111;
+	    text-align: center;
+	    font-weight: normal;
+	    border: 1px solid #e1e1e2;
+	}
+	td > input{
+		border : none;
+		width:100%;
+		padding-left: 10px;
+	    height: 30px;
+	    font-size: 13px;
+	}
+	tr> td:nth-child(1){
+		display:flex;
+		justify-content:center;
+	}
+	.invalidValue{
+		border : solid red 2px;
+	}
+	
+	#div_backgroundfull{
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:100%;
+		height:100%;
+		overflow:hidden;
+		background:rgb(0,0,0);
+		opacity:0.3;
+		z-index:9000;
+		display:block;
+	}
+	
+	#div_allowpopup{
+		width:380px;
+		z-index:11000;
+		height:233px;
+		position:fixed;
+		top:50%;
+		left:50%;
+		margin-top:-116.5px;
+		margin-left:-190px;
+		display:block;
+		background:rgb(255,255,255);
+		border-radius:7px;
+	}
+	#div_allowtitle{
+		width:380px;
+		height:43px;
+		padding: 11px 0 8px 16px;
+		position:relative;
+		color:#111;
+		font-size:16px;
+		font-weight:normal;
+		background:#f4f4f4;
+		border-radius: 7px 7px 0 0;
+	}
+	#div_allowtitle > a{
+		display:block;
+		position:absolute;
+		top:15px;
+		right:15px;
+		width:14px;
+		height:14px;
+		background-image : url(https://flow.team/design2/img_rn/btn/btn_layerstyle4_close2.png?1);
+		cursor:pointer;
+	}
+	
+	#div_allowbody{
+		width:380px;
+		height:190px;
+		padding:20px;
+	}
+	
+	#div_allowcont{
+		width:340px;
+		height:100px;
+		font-size:14px;
+		color:#4f545d;
+		text-align:center;
+	}
+	#div_allowbutton{
+		width:340px;
+		height:50px;
+		padding : 20px 0 0;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+	}

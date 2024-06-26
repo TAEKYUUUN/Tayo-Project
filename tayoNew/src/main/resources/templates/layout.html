@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- sbb CSS -->
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+	<script th:src="@{/bootstrap.min.js}"></script>
+    <title>Hello, sbb!</title>
+</head>
+<body>
+	<div id="div_sidebar" class = "fl">
+			<div id = "div_header" >
+				<div id = "div_imagelogo">
+					<img src = "https://flow.team/flow-renewal/assets/images/flow-logo-w.svg" />
+				</div>
+			</div>
+			<div id = "div_side" class = "scrollbar">
+			<div id = "div_sidecontents" >
+				<h2>회사</h2>
+				<div id="div_h3box" >
+					<h3>회사 정보</h3>
+					<h3 style ="color : #7faeff">구성원 관리</h3>
+					<h3>구성원 초대</h3>
+					<h3>조직도 관리</h3>
+					<h3>포털 앱 권한 관리</h3>
+				</div>
+				<h2>프로젝트</h2>
+				<div id="div_h3box2" >
+					<h3>프로젝트 관리</h3>
+					<h3>회사 프로젝트 관리</h3>
+					<h3>공개 프로젝트 관리</h3>
+					<h3>공개 프로젝트 카테고리</h3>
+					<h3>프로젝트 템플릿 카테고리 관리</h3>
+					<h3>비활성화 프로젝트 관리</h3>
+				</div>
+				<h2>통계/리포트</h2>
+				<div id="div_h3box3" >
+					<h3>접속 통계</h3>
+					<h3>사용 통계</h3>
+				</div>
+				<h2>보안 설정</h2>
+				<div id="div_h3box" >
+					<h3>파일 보안 설정</h3>
+					<h3>로그인 보안 설정</h3>
+					<h3>화면 캡처 방지 설정</h3>
+					<h3>워터마크 설정</h3>
+					<h3>AI설정</h3>
+				</div>
+				<h2>로그</h2>
+				<div id="div_h3box3">
+					<h3>파일 다운로드 이력</h3>
+					<h3>관리자 변경 이력</h3>
+				</div>
+				<h2>결제</h2>
+				<div id="div_h3box4">
+					<h3>결제 정보</h3>
+				</div>
+				</div>
+			</div>
+			<div id = "div_helpbutton"><img src = "img/img_help.png"/></div>
+		</div>
+
+<!-- 기본 템플릿 안에 삽입될 내용 Start -->
+<th:block layout:fragment="content"></th:block>
+<!-- 기본 템플릿 안에 삽입될 내용 End -->
+</body>
+</html>

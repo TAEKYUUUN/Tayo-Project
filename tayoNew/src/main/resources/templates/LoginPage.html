@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- sbb CSS -->
+    <link rel="stylesheet" type="text/css" th:href="@{/LoginPage.css}">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>TayoAdmin</title>
+</head>
+
+<body>
+   <header>
+      <nav>
+         <div id="header1">
+            <a href="http://127.0.0.1:5500/HTML/tayo4/MainPage.html"> <img
+               id="flow_img" src="img/flow.png" alt="" />
+            </a>
+         </div>
+         <div id="header2">
+            <ul class="item_list">
+               <li id="nav1">
+                  <span class="header_span">
+                     <i class="n"></i><img
+                        src="/img/n.png" alt="" /></i> 기능 <i class="arrow"><img
+                        src="/img/i.png" alt="" /></i>
+               </span>
+               </li>
+               <li id="nav2"><span class="header_span"> 요금 <i
+                     class="arrow"><img src="/img/i.png" alt="" /></i>
+               </span></li>
+               <li id="nav3"><span class="header_span"> 팀 협업 <i
+                     class="arrow"><img src="/img/i.png" alt="" /></i>
+               </span></li>
+               <li id="nav4"><a class="header_a" href="">강의실</a></li>
+               <li id="nav5"><a class="header_a" href="">프로모션</a></li>
+            </ul>
+            <div class="button_wrap">
+               <a class="header_doip_box" href=""> <img
+                  src="/img/doip.png" alt="" /> 도입 문의
+               </a> <a class="header_login_box" href="https://flow.team/signin.act">
+                  로그인 </a> <a class="header_gaip_box" th:href="@{/member/regist}"> 무료 회원가입 </a>
+            </div>
+         </div>
+      </nav>
+      <hr id="header_hr" />
+   </header>   <!--  header 종료 -->
+   <div id="div_main">      <!--  main 시작  -->
+	<form th:action="@{/member/login}" method="post">
+	    <div th:if="${param.error}">
+	        <div class="alert alert-danger">
+	            사용자ID 또는 비밀번호를 확인해 주세요.
+	        </div>
+	    </div>
+	    <div id="div_login_wrap">
+	        <div id="div_login_text">로그인</div>
+	        <div id="div_login_form">
+	            <div id="div_input_id">
+	                <input type="text" placeholder="아이디" id="username" name="username"/>
+	            </div>
+	            <div id="div_input_password">
+	                <input type="password" placeholder="비밀번호" id="password" name="password"/>
+	            </div>
+	        </div>
+	        <div id="div_pw_find_section">
+	            <a id="a_pw_find" href="">비밀번호 찾기</a>
+	        </div>
+	        <button type="submit" id="normal_login_button" class="login-button">로그인</button>
+	        <div id="div_auto_login" class="auto-login-label">
+	            <a class="cursor-pointer"></a>
+	            자동 로그인
+	        </div>
+	        <div id="guest_or">
+	            <img src="/img/guest_or.png"/>
+	        </div>
+	        <div id="div_google_login"><img src="/img/google.png"/><span>Google 계정으로 로그인</span></div>
+	        <div id="div_kakao_login"><img src="/img/kakao.png"/><span>Kakao 계정으로 로그인</span></div>
+	        <div id="div_apple_login"><img src="/img/apple.png"/><span>Apple 계정으로 로그인</span></div>
+	    </div>
+	</form>
+
+   </div>
+   <footer></footer>
+</body>
+</html>

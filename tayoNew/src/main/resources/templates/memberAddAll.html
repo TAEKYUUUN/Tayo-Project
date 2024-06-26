@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- sbb CSS -->
+    <link rel="stylesheet" type="text/css" th:href="@{/memberAddAll.css}">
+	<script th:src="@{/memberAddAll.js}"></script>
+    <title>TayoAdmin</title>
+</head>
+<body style = "overflow-y:hidden">
+	<div id="div_sidebar" class = "fl">
+		<div id = "div_header" >
+			<div id = "div_imagelogo">
+				<img src = "https://flow.team/flow-renewal/assets/images/flow-logo-w.svg" />
+			</div>
+		</div>
+		<div id = "div_side" class = "scrollbar">
+		<div id = "div_sidecontents" >
+			<h2>회사</h2>
+			<div id="div_h3box" >
+				<h3>회사 정보</h3>
+				<h3>구성원 관리</h3>
+				<h3 style ="color : #7faeff">구성원 초대</h3>
+				<h3>조직도 관리</h3>
+				<h3>포털 앱 권한 관리</h3>
+			</div>
+			<h2>프로젝트</h2>
+			<div id="div_h3box2" >
+				<h3>프로젝트 관리</h3>
+				<h3>회사 프로젝트 관리</h3>
+				<h3>공개 프로젝트 관리</h3>
+				<h3>공개 프로젝트 카테고리</h3>
+				<h3>프로젝트 템플릿 카테고리 관리</h3>
+				<h3>비활성화 프로젝트 관리</h3>
+			</div>
+			<h2>통계/리포트</h2>
+			<div id="div_h3box3" >
+				<h3>접속 통계</h3>
+				<h3>사용 통계</h3>
+			</div>
+			<h2>보안 설정</h2>
+			<div id="div_h3box" >
+				<h3>파일 보안 설정</h3>
+				<h3>로그인 보안 설정</h3>
+				<h3>화면 캡처 방지 설정</h3>
+				<h3>워터마크 설정</h3>
+				<h3>AI설정</h3>
+			</div>
+			<h2>로그</h2>
+			<div id="div_h3box3">
+				<h3>파일 다운로드 이력</h3>
+				<h3>관리자 변경 이력</h3>
+			</div>
+			<h2>결제</h2>
+			<div id="div_h3box4">
+				<h3>결제 정보</h3>
+			</div>
+			</div>
+		</div>
+		<div id = "div_helpbutton"><img src = "img/img_help.png"/></div>
+	</div>
+	<div id = "div_content" class = "fr">
+		<div id = "div_titleh1">
+			<button id ="div_backsign" style = "display:block;"></button>
+			<h1>구성원 일괄등록</h1>
+		</div>
+		<div id = "div_guide">
+			<ul style="list-style-type: none;">
+				<li>· <span>1회 최대 200명까지 등록할 수 있습니다</span></li>
+				<li>· <span>"등록 불가능한 행 모아보기" 체크박스 체크 시, 관련 행만 모아볼 수 있습니다</span></li>
+				<li>· <span>등록 완료 시, 사용자가 비밀번호를 설정하고 서비스를 시작할 수 있도록 안내 메일을 발송합니다.</span></li>
+				<li>· <span> 등록된 사용자는 좌측 "사용자 관리" 메뉴에서 확인할 수 있습니다.</span></li>
+			</ul>
+			<a>도움말</a>
+		</div>
+		<div id = "div_insertFile">
+			<div id = "div_excelupload">
+				<input type="text" placeholder="xlsx 파일만 업로드 가능합니다." readonly>
+				<button class="button1">파일 등록</button>
+				<a class="button2"><span></span>엑셀 양식 다운로드</a>
+			</div>
+			<p>※ 파일등록 시, 해당 엑셀 표로 아래 표가 초기화됩니다.</p>
+		</div>
+		<div id = "div_additional_person">
+			<div id="div_totalamount" >
+				<div id="div_totalleft" class = "fl">
+					<span><strong>전체 0건수</strong></span>
+					<span>(0개 등록 가능, </span>
+					<span style="color:red;">0건수 </span>
+					<span> 등록 불가능 )</span>
+					<label>
+						<input type="checkbox">
+						<span>등록 불가능한 행 모아보기</span>
+					</label>
+				</div>
+				<div id="div_totalright" class = "fr">
+					<button id = "addrow" class="button2">행 추가</button>
+					<button id = "deleterow" class="button2">삭제</button>
+					<button class="button1" id="addNewMember">등록</button>
+				</div>
+			</div>
+			<table>
+			<thead>
+				<tr>
+					<th scope= "col" style="width:30px;">
+						<div><input id="checkAllUser" type="checkbox"></div>
+					</th>
+					<th scope="col">
+						<div><span>이름</span></div>
+					</th>
+					<th scope="col">
+						<div><span>이메일</span></div>
+					</th>
+					<th scope="col">
+						<div><span>휴대폰 번호</span></div>
+					</th>
+					<th scope="col">
+						<div><span>부서코드</span></div>
+					</th>				
+					<th scope="col">
+						<div><span>직책</span></div>
+					</th>				
+					<th scope="col">
+						<div><span>회사 연락처</span></div>
+					</th>				
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					
+				</tr>
+			</tbody>
+			</table>
+		</div>
+		<div id= "div_allowpopup" style="display:none;">
+			<div id="div_allowtitle">등록을 진행하시겠습니까?<a id="exitallow"></a></div>
+			<div id="div_allowbody">
+				<div id="div_allowcont">
+				<div>
+					계정 일괄 등록 시, 해당 구성원들은 이용약관에 동의하는 것으로 간주됨을 명시드립니다.<br/>
+					*확인 버튼을 누를 시, 등록된 구성원에게 비밀번호 재설정 이메일이 전송됩니다.<br/>
+  					초기 비밀번호는 team123~! 입니다.</div>
+  				</div>
+				<div id="div_allowbutton" >
+					<button id="allowcancel" class="button2" style="width:153px; height:30px; margin-right:10px;margin-left:0px;">취소</button>
+					<button id="allowsave" class="button1" style="width:153px; height:30px;">확인</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="div_backgroundfull" style="display:none;">
+	</div>
+	
+	<div style = "clear:both;"></div>
+	
+</body>
+</html>

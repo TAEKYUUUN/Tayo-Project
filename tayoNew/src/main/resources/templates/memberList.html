@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- sbb CSS -->
+    <link rel="stylesheet" type="text/css" th:href="@{/memberList.css}">
+	<script th:src="@{/memberList.js}"></script>
+    <title>TayoAdmin</title>
+</head>
+<body>
+<div id="div_sidebar" class = "fl">
+		<div id = "div_header" >
+			<div id = "div_imagelogo">
+				<img src = "https://flow.team/flow-renewal/assets/images/flow-logo-w.svg" />
+			</div>
+		</div>
+		<div id = "div_side" class = "scrollbar">
+		<div id = "div_sidecontents" >
+			<h2>회사</h2>
+			<div id="div_h3box" >
+				<h3>회사 정보</h3>
+				<h3 style ="color : #7faeff">구성원 관리</h3>
+				<h3>구성원 초대</h3>
+				<h3>조직도 관리</h3>
+				<h3>포털 앱 권한 관리</h3>
+			</div>
+			<h2>프로젝트</h2>
+			<div id="div_h3box2" >
+				<h3>프로젝트 관리</h3>
+				<h3>회사 프로젝트 관리</h3>
+				<h3>공개 프로젝트 관리</h3>
+				<h3>공개 프로젝트 카테고리</h3>
+				<h3>프로젝트 템플릿 카테고리 관리</h3>
+				<h3>비활성화 프로젝트 관리</h3>
+			</div>
+			<h2>통계/리포트</h2>
+			<div id="div_h3box3" >
+				<h3>접속 통계</h3>
+				<h3>사용 통계</h3>
+			</div>
+			<h2>보안 설정</h2>
+			<div id="div_h3box" >
+				<h3>파일 보안 설정</h3>
+				<h3>로그인 보안 설정</h3>
+				<h3>화면 캡처 방지 설정</h3>
+				<h3>워터마크 설정</h3>
+				<h3>AI설정</h3>
+			</div>
+			<h2>로그</h2>
+			<div id="div_h3box3">
+				<h3>파일 다운로드 이력</h3>
+				<h3>관리자 변경 이력</h3>
+			</div>
+			<h2>결제</h2>
+			<div id="div_h3box4">
+				<h3>결제 정보</h3>
+			</div>
+			</div>
+		</div>
+		<div id = "div_helpbutton"><img src = "img/img_help.png"/></div>
+	</div>
+	<div id = "div_content" class = "fr scrollbar">
+		<div id = "div_titleh1">
+			<h1>구성원 관리</h1> 
+			<a th:href="@{/member/login}" sec:authorize="isAnonymous()" style="float:right; margin-top:-30px;">로그인</a>
+			<a th:href="@{/member/logout}" sec:authorize="isAuthenticated()" style="float:right; margin-top:-30px;">로그아웃</a>
+		</div>
+		<div id = "div_guide">
+			<strong>가이드</strong>
+			<ul>
+				<li>구성원 계정을 관리할 수 있습니다. (계정 등록/삭제, 가입 승인/거절, 정보 수정, 비밀번호 초기화 등)</li>
+				<li id="starlist">단, 타 서비스와 계정 정보를 연동하는 기업의 경우에는 연동된 서비스에서 관리해 주셔야 합니다.</li>
+				<li>구성원을 이용중지 처리 또는 이용중지 해제하여 접속 가능 여부를 관리할 수 있습니다.</li>
+				<li>등록된 구성원 중 관리자를 추가 지정/해제할 수 있습니다. 관리자로 지정된 구성원에게는 ‘어드민’ 접속 권한이 생기며, 서비스와 관련된 안내(결제/공지 등)를 받게 됩니다.</li>
+			</ul>
+			<a class="help-view-btn">도움말</a>
+		</div>
+		<div id = "div_headtab">
+			<a class="selectedheadtab">정상 (11)</a>
+			<a>이용중지 (0)</a>
+			<a>가입대기 (0)</a>
+		</div>
+		<div id = "div_searchwrap">
+			<div id = "div_searcharea" >
+				<div id = "div_search" class = "fl">
+					<select id = "searchingtype" name = "selsearch">
+						<option value = "name">이름</option>	
+						<option value = "ID">아이디</option>	
+						<option value = "company">회사</option>	
+						<option value = "organization">부서</option>	
+						<option value = "rank">직책</option>	
+						<option value = "mail">이메일</option>	
+						<option value = "phone">휴대폰</option>	
+					</select>
+					<input type = "text" id = "searchword" placeholder = "검색어를 입력해주세요" style = "width:220px">
+					<a>검색</a>
+				</div>
+				<div id = "div_buttons" class = "fr">
+					<a id="div_buttonsA1">
+						<span>엑셀 다운로드</span>
+					</a>
+					<a>
+					<span id="div_buttonsA2" style="cursor:pointer; height:25px">+ 구성원 등록</span>
+					</a>
+					<div id="div_buttons" class="fr">
+							</a>
+								<div id="newbuttons" style="display:none">
+										<ul>
+											<li>
+												<button id="addbutton1">구성원 개별 등록</button>
+											</li>
+											<li>
+												<a th:href="@{/member/AddAll}">
+													<button id="addbutton1">구성원 일괄 등록</button>
+												</a>
+											</li>
+										</ul>
+								</div>
+										
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id = "div_blank"></div>
+		<div id = "div_table" >
+		<table>
+			<thead>
+				<tr>
+					<th scope= "col" style="width:30px;">
+						<div><input id="checkAllUser" type="checkbox"></div>
+					</th>
+					<th scope="col" style="cursor:pointer;">
+						<div><span>회사</span><a style ="-webkit-transform: rotateX(180deg)"></a></div>
+					</th>
+					<th scope="col" style="cursor:pointer;">
+						<div><span>이름</span><a></a></div>
+					</th>
+					<th scope="col" style="cursor:pointer;">
+						<div><span>부서</span><a></a></div>
+					</th>
+					<th scope="col" style="cursor:pointer;">
+						<div><span>직책</span><a></a></div>
+					</th>
+					<th scope="col" style="cursor:pointer;">
+						<div><span>이메일</span><a></a></div>
+					</th>
+					<th scope="col" style="cursor:pointer;">
+						<div><span>휴대폰 번호</span><a></a></div>
+					</th>
+					<th scope="col" style="cursor:pointer;">
+						<div><span>가입일</span><a></a></div>
+					</th>
+					<th scope="col" style="cursor:pointer;">
+						<div><span>웹 접속</span><a></a></div>
+					</th>
+					<th scope="col" style="cursor:pointer;">
+						<div><span>모바일 접속</span><a></a></div>
+					</th>
+					<th scope="col" style="cursor:pointer;">
+						<div><span>데스크탑앱 접속</span><a></a></div>
+					</th>
+					<th scope="col">
+						<div><span>접속 장치</span><a></a></div>
+					</th>
+					<th scope="col">
+						<div><span>상태</span><a></a></div>
+					</th>
+					<th scope="col" style="cursor:pointer;">
+						<div><span>관리자</span><a></a></div>
+					</th>				
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="member : ${memberList}">
+					<td><input type="checkbox" style="margin:0; cursor:pointer;"></td>
+					<td th:text="${member.company.companyName}"></td>
+					<td th:text="${member.name}" class="trName"></td>
+					<td th:text="${member.organization.organizationName}" class="trOrganizationName"></td>
+					<td th:text="${member.rankName}" class="trRankName"></td>
+					<td th:text="${member.email}" class="trId"></td>
+					<td th:text="${member.phone}" class="trPhone"></td>
+					<td th:text="${member.registDate}"></td>
+					<td th:text="${member.password}" class="trPw" style="display:none"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				
+			</tbody>
+		</table>
+		<table style="display:none;">
+			<thead>
+				<tr>
+					<th scope= "col" style="width:30px; display:none;">
+						<div><input id="checkAllUser" type="checkbox"></div>
+					</th>
+					<th scope="col" style="cursor:pointer;">
+						<div><span>회사</span><a style ="-webkit-transform: rotateX(180deg)"></a></div>
+					</th>
+					<th scope="col" style="cursor:pointer;">
+						<div><span>이름</span><a></a></div>
+					</th>
+					<th scope="col" style="cursor:pointer;">
+						<div><span>부서</span><a></a></div>
+					</th>
+					<th scope="col" style="cursor:pointer;">
+						<div><span>직책</span><a></a></div>
+					</th>
+					<th scope="col" style="cursor:pointer;">
+						<div><span>이메일</span><a></a></div>
+					</th>
+					<th scope="col" style="cursor:pointer;">
+						<div><span>휴대폰 번호</span><a></a></div>
+					</th>
+					<th scope="col" style="cursor:pointer;">
+						<div><span>가입일</span><a></a></div>
+					</th>
+					<th scope="col" style="cursor:pointer;">
+						<div><span>웹 접속</span><a></a></div>
+					</th>
+					<th scope="col" style="cursor:pointer;">
+						<div><span>모바일 접속</span><a></a></div>
+					</th>
+					<th scope="col" style="cursor:pointer;">
+						<div><span>데스크탑앱 접속</span><a></a></div>
+					</th>
+					<th scope="col">
+						<div><span>접속 장치</span><a></a></div>
+					</th>
+					<th scope="col">
+						<div><span>상태</span><a></a></div>
+					</th>
+					<th scope="col" style="cursor:pointer;">
+						<div><span>관리자</span><a></a></div>
+					</th>
+					<th scope="col">
+						<div><span>삭제</span></div>
+					</th>				
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td colspan="14">결과값이 존재하지 않습니다</td>
+				</tr>
+			</tbody>
+			</table>
+			<table  style = "display:none;">
+				<thead>
+					<tr>
+						<th scope="col" style="cursor:pointer;">
+							<div><span>이름</span><a></a></div>
+						</th>
+						<th scope="col" style="cursor:pointer;">
+							<div><span>이메일</span><a></a></div>
+						</th>
+						<th scope="col" style="cursor:pointer;">
+							<div><span>가입 요청일</span><a></a></div>
+						</th>
+						<th scope="col">
+							<div><span>설정</span></div>
+						</th>				
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td colspan="4">결과값이 존재하지 않습니다</td>
+					</tr>
+				</tbody>
+				</table>
+		</div>
+		<div id="div_backgroundfull" style="display:none;"></div>
+			<form action="/member/list" method="post">
+			<div id="div_insertpopup" style="display:none;" class="insertpopup">
+				<div id="div_insertpopuphead" >
+					<div id="div_logoinserttitle">사용자 등록 <a id="exitlogoedit"></a></div>
+				</div>
+				<div id="div_popupbottom">
+					<div id="div_popupbody">
+						<h3 style="margin-bottom: 10px;color: rgb(48, 124, 255);">필수정보</h3>
+						<div id="div_popupline">
+							<div><span>이름*</span></div>
+							<input type="text" placeholder="이름을 입력해주세요" id="popupName" name="popupName">
+						</div>
+						<div id="div_popupline">
+							<div><span>이메일*</span></div>
+							<input type="text" placeholder="이메일을 입력해주세요" id="popupEmail" name ="popupEmail">
+						</div>
+						<div id="div_popupline">
+							<div><span>비밀번호*</span></div>
+							<input type="text" placeholder="비밀번호를 입력해주세요" id="popupPw" name="popupPw">
+						</div>
+						<div style="width:100; height:20px; border-bottom:1px solid #e5e5e5;"></div>
+						<h3 style="margin-bottom: 10px;color: rgb(48, 124, 255);">추가정보</h3>
+						<div id="div_popupline">
+							<div><span>부서명</span></div>
+							<input type="text" placeholder="부서명을 입력해주세요" id="popupOrg" name="popupOrg">
+						</div>
+						<div id="div_popupline">
+							<div><span>직급</span></div>
+							<input type="text" placeholder="직급을 입력해주세요" id="popupRank" name="popupRank">
+						</div>
+						<div id="div_popupline">
+							<div><span>휴대폰 번호</span></div>
+							<input type="text" placeholder="숫자와 +, -만 입력 가능합니다" id="popupPhone" name="popupPhone">
+						</div>
+						<div style="margin-top:25px;">
+							<span style="font-size:13px;">
+								※ 사용자 등록 후, "이메일 주소/비밀번호" 입력하여 로그인 가능합니다.<br>
+								※ 비밀번호는 웹화면 [설정>비밀번호 변경] 메뉴에서 추후 변경할 수 있습니다.
+							</span>
+						</div>
+					</div>
+					<div id="div_popupbuttons" style="margin-top:30px;">
+						<button type="submit" class="button1" style="width:120px;" id="savebutton1">저장</button>
+						<button type = "button" class="button2" style="width:120px;" id="cancelbutton1">취소</button>
+					</div>
+				</div>
+			</div>
+			</form>
+			<div id="div_insertpopup" style="display:none;" class="editpopup">
+				<form action="/member/list" method="post">
+							<div id="div_insertpopuphead" >
+								<div id="div_logoinserttitle">사용자 수정 <a id="exitlogoedit"></a></div>
+							</div>
+							<div id="div_popupbottom">
+								<div id="div_popupbody">
+									<h3 style="margin-bottom: 10px;color: rgb(48, 124, 255);">필수정보</h3>
+									<div id="div_popupline">
+										<div><span>이름*</span></div>
+											<input type="text" placeholder="이름을 입력해주세요" id="editpopupName" name="popupName">
+									</div>
+									<div id="div_popupline">
+										<div><span>이메일*</span></div>
+											<input type="text" placeholder="이메일을 입력해주세요" id="editpopupEmail" name ="popupEmail" readonly>
+										</div>
+										<div id="div_popupline">
+										<div><span>비밀번호*</span></div>
+										<input type="text" placeholder="비밀번호를 입력해주세요" id="editpopupPw" name="popupPw">
+										</div>
+										<div style="width:100; height:20px; border-bottom:1px solid #e5e5e5;"></div>
+										<h3 style="margin-bottom: 10px;color: rgb(48, 124, 255);">추가정보</h3>
+										<div id="div_popupline">
+										<div><span>부서명</span></div>
+											<input type="text" placeholder="부서명을 입력해주세요" id="editpopupOrg" name="popupOrg">
+										</div>
+										<div id="div_popupline">
+										<div><span>직급</span></div>
+										<input type="text" placeholder="직급을 입력해주세요" id="editpopupRank" name="popupRank">
+										</div>
+										<div id="div_popupline">
+										<div><span>휴대폰 번호</span></div>
+										<input type="text" placeholder="숫자와 +, -만 입력 가능합니다" id="editpopupPhone" name="popupPhone">
+										</div>
+									<div style="margin-top:25px;">
+										<span style="font-size:13px;">
+											※ 사용자 등록 후, "이메일 주소/비밀번호" 입력하여 로그인 가능합니다.<br>
+											※ 비밀번호는 웹화면 [설정>비밀번호 변경] 메뉴에서 추후 변경할 수 있습니다.
+										</span>
+									</div>
+								</div>
+								<div id="div_popupbuttons" style="margin-top:30px;">
+									<button type="submit" class="button1" style="width:120px;" id="savebutton2">저장</button>
+									<button type="button" class="button2" style="width:120px;" id="cancelbutton2">취소</button>
+								</div>
+							</div>
+							</form>
+						</div>
+	</div>
+	<div style = "clear:both;"></div>
+</body>
+</html>
